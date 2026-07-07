@@ -4,13 +4,13 @@
   "description": "GDPR-safe crypto-shredding for event-sourced systems: encrypt PII per-subject, delete the key to erase, keep the audit trail intact forever.",
   "license": "MIT",
   "author": "halleyhq",
-  "homepage": "https://github.com/halleyhq/crypto-shredding#readme",
+  "homepage": "https://github.com/halleyhq/crypto-shredder#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/halleyhq/crypto-shredding.git"
+    "url": "git+https://github.com/halleyhq/crypto-shredder.git"
   },
   "bugs": {
-    "url": "https://github.com/halleyhq/crypto-shredding/issues"
+    "url": "https://github.com/halleyhq/crypto-shredder/issues"
   },
   "keywords": [
     "event-sourcing",
