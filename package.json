@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "GDPR-safe crypto-shredding for event-sourced systems: encrypt PII per-subject, delete the key to erase, keep the audit trail intact forever.",
   "license": "MIT",
-  "author": "Yorke Rossington",
+  "author": "halleyhq",
   "homepage": "https://github.com/halleyhq/crypto-shredding#readme",
   "repository": {
     "type": "git",
