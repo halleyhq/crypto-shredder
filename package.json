@@ -1,0 +1,114 @@
+{
+  "name": "@halleyhq/crypto-shredding",
+  "version": "0.1.0",
+  "description": "GDPR-safe crypto-shredding for event-sourced systems: encrypt PII per-subject, delete the key to erase, keep the audit trail intact forever.",
+  "license": "MIT",
+  "author": "Yorke Rossington",
+  "homepage": "https://github.com/halleyhq/crypto-shredding#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halleyhq/crypto-shredding.git"
+  },
+  "bugs": {
+    "url": "https://github.com/halleyhq/crypto-shredding/issues"
+  },
+  "keywords": [
+    "event-sourcing",
+    "gdpr",
+    "crypto-shredding",
+    "right-to-erasure",
+    "nestjs",
+    "encryption",
+    "compliance",
+    "cqrs"
+  ],
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./crypto-shredding.module": {
+      "types": "./dist/crypto-shredding.module.d.ts",
+      "import": "./dist/crypto-shredding.module.mjs",
+      "require": "./dist/crypto-shredding.module.js"
+    },
+    "./decorators/encryptable-event.decorator": {
+      "types": "./dist/decorators/encryptable-event.decorator.d.ts",
+      "import": "./dist/decorators/encryptable-event.decorator.mjs",
+      "require": "./dist/decorators/encryptable-event.decorator.js"
+    },
+    "./decorators/metadata-registry": {
+      "types": "./dist/decorators/metadata-registry.d.ts",
+      "import": "./dist/decorators/metadata-registry.mjs",
+      "require": "./dist/decorators/metadata-registry.js"
+    },
+    "./schemas/encryption-key.schema": {
+      "types": "./dist/schemas/encryption-key.schema.d.ts",
+      "import": "./dist/schemas/encryption-key.schema.mjs",
+      "require": "./dist/schemas/encryption-key.schema.js"
+    },
+    "./services/crypto-shredder.service": {
+      "types": "./dist/services/crypto-shredder.service.d.ts",
+      "import": "./dist/services/crypto-shredder.service.mjs",
+      "require": "./dist/services/crypto-shredder.service.js"
+    },
+    "./services/encryption-key.service": {
+      "types": "./dist/services/encryption-key.service.d.ts",
+      "import": "./dist/services/encryption-key.service.mjs",
+      "require": "./dist/services/encryption-key.service.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "biome check --diagnostic-level=error .",
+    "lint:fix": "biome check --write .",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "changeset": "changeset",
+    "release": "pnpm build && changeset publish"
+  },
+  "dependencies": {
+    "mongoose": "^9.1.6"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/mongoose": "^11.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.0",
+    "@changesets/cli": "^2.27.10",
+    "@nestjs/common": "^11.1.11",
+    "@nestjs/mongoose": "^11.0.4",
+    "@types/node": "^22.9.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.9.2",
+    "vitest": "^2.1.8"
+  },
+  "packageManager": "pnpm@10.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "esbuild"
+    ]
+  }
+}
